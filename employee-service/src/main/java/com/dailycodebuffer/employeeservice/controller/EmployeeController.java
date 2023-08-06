@@ -1,5 +1,6 @@
 package com.dailycodebuffer.employeeservice.controller;
 
+import com.dailycodebuffer.employeeservice.client.EmployeeClient;
 import com.dailycodebuffer.employeeservice.model.Employee;
 import com.dailycodebuffer.employeeservice.repository.EmployeeRepository;
 import org.slf4j.Logger;
@@ -16,6 +17,9 @@ public class EmployeeController {
     private static final Logger LOGGER = LoggerFactory.getLogger(EmployeeController.class);
     @Autowired
     private EmployeeRepository employeeRepository;
+
+    @Autowired
+    private EmployeeClient employeeClient;
 
     @PostMapping
     public Employee add(@RequestBody Employee employee) {
